@@ -13,13 +13,13 @@ $sql_pro = "SELECT * FROM products ORDER BY pro_id DESC LIMIT 8";
 $result_pro = mysqli_query($conn, $sql_pro);
 ?>
 
-<h1 style="color: red; text-align: center;">Chiều Thứ Hai - Ca 3 - Ngô Thanh Hoàng (MSSV của bạn)</h1>
 <div class="row">
     <div class="col-md-3 mb-4">
         <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action active bg-primary border-primary">
                 <i class="fas fa-list"></i> DANH MỤC SÁCH
             </a>
+            <h1 style="color: red; text-align: center;">Chiều Thứ Hai - Ca 3 - Ngô Thanh Hoàng (MSSV của bạn)</h1>
             <?php while($row_cat = mysqli_fetch_assoc($result_cat)): ?>
                 <a href="category.php?id=<?php echo $row_cat['cat_id']; ?>" class="list-group-item list-group-item-action">
                     <i class="fas fa-caret-right"></i> <?php echo $row_cat['cat_name']; ?>

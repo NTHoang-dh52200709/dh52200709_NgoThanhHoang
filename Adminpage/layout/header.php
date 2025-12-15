@@ -27,6 +27,7 @@
             <li class="nav-item">
                 <a class="nav-link fw-bold text-warning" href="labs.php">LAB THỰC HÀNH</a>
             </li>
+            <li> <h1 style="color: red; text-align: center;">Chiều Thứ Hai - Ca 3 - Ngô Thanh Hoàng (DH52200709)</h1></li>
             <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
         </ul>
       <ul class="navbar-nav">

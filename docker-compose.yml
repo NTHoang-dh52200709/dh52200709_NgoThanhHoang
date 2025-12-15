@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Cấu hình cho Website PHP
+  web-app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mysql-db
+    networks:
+      - my-network
+
+  # Cấu hình cho Database MySQL
+  mysql-db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: shop_db
+      MYSQL_ROOT_PASSWORD: 123
+    volumes:
+      # Tự động import file sql của bạn khi chạy lần đầu
+      - ./Adminpage/shop_db.sql:/docker-entrypoint-initdb.d/shop_db.sql
+    networks:
+      - my-network
+
+  node-app:
+    build: ./Clothing-Management-master  # <-- Trỏ đúng tên thư mục của bạn
+    ports:
+      - "3000:3000"  # Cổng 3000 khớp với EXPOSE trong Dockerfile của bạn
+    networks:
+      - my-network
+
+networks:
+  my-network:

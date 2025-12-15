@@ -1,0 +1,20 @@
+name: Deploy to Kesug Host
+on:
+  push:
+    branches:
+      - main
+jobs:
+  FTP-Deploy-Action:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftp
+        local-dir: ./Adminpage/ # Chỉ đẩy thư mục code PHP
+        server-dir: ./htdocs/   # Quan trọng: Kiểm tra kỹ thư mục trên host là htdocs hay public_html

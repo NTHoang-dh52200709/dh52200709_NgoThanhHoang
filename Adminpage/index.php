@@ -13,6 +13,7 @@ $sql_pro = "SELECT * FROM products ORDER BY pro_id DESC LIMIT 8";
 $result_pro = mysqli_query($conn, $sql_pro);
 ?>
 
+<h1 style="color: red; text-align: center;">Chiều Thứ Hai - Ca 3 - Ngô Thanh Hoàng (MSSV của bạn)</h1>
 <div class="row">
     <div class="col-md-3 mb-4">
         <div class="list-group">

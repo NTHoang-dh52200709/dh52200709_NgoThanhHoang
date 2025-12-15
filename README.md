@@ -1,1 +1,1 @@
-Code cua toi chay tren nhanh MAIN.
+Code cua toi chay tren ca nhanh MAIN va DEVELOP.

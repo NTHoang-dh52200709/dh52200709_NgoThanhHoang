@@ -26,9 +26,19 @@ services:
       - my-network
 
   node-app:
-    build: ./Clothing-Management-master  # <-- Trỏ đúng tên thư mục của bạn
+    build: ./Clothing-Management-master  # <-- Tên thư mục Node của bạn
     ports:
-      - "3000:3000"  # Cổng 3000 khớp với EXPOSE trong Dockerfile của bạn
+      - "3000:3000"
+    depends_on:
+      - mongo-db  # <-- Bắt buộc phải đợi Mongo chạy xong mới chạy web
+    networks:
+      - my-network
+
+  # --- THÊM CÁI NÀY: Database MongoDB ---
+  mongo-db:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
     networks:
       - my-network
 
